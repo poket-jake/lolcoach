@@ -29,6 +29,10 @@
   padding: 0;
 }
 
+.hidden {
+  display: none !important;
+}
+
 body {
   font-family: var(--font-main);
   background: var(--bg-color) url('https://universe.leagueoflegends.com/images/summoners_rift_map.jpg') no-repeat center center fixed;
@@ -68,7 +72,6 @@ body {
   cursor: default;
   display: flex;
   flex-direction: column;
-  min-height: 100%;
 }
 
 .glass-card:hover {
@@ -779,9 +782,10 @@ h4 {
 .item-build-tree {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  /* 4개 카테고리 가로 배치 */
-  gap: 1.5rem;
-  padding: 1rem 0;
+  gap: 1rem;
+  /* 간격 축소 */
+  padding: 0.5rem 0;
+  /* 패딩 축소 */
 }
 
 .item-category {
@@ -966,10 +970,15 @@ h4 {
   border-radius: 12px;
   padding: 1rem;
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.9);
-  display: flex !important;
-  flex-direction: column !important;
+  display: flex;
+  /* !important 제거 */
+  flex-direction: column;
   max-height: 400px;
   animation: fadeDown 0.2s ease-out;
+}
+
+#champ-dropdown.hidden {
+  display: none !important;
 }
 
 #champ-dropdown .search-input {

@@ -1,0 +1,21 @@
+{
+  "name": "lol-strategy-assistant",
+  "version": "1.0.0",
+  "description": "LoL Matchup and Team Draft Strategy Assistant",
+  "main": "app.js",
+  "scripts": {
+    "start": "serve .",
+    "dev": "serve ."
+  },
+  "keywords": [
+    "lol",
+    "league-of-legends",
+    "strategy",
+    "matchup"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "serve": "^14.2.4"
+  }
+}

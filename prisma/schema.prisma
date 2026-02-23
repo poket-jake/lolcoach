@@ -1,0 +1,82 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Champion {
+  id           Int      @id // 라이엇 ID (PK)
+  nameKr       String   @map("name_kr")
+  nameEn       String   @map("name_en")
+  classTag     String   @map("class_tag")   // 메이지, 암살자 등
+  rangeType    String   @map("range_type")  // 근거리, 원거리
+  winFormula   String   @map("win_formula") // 필승 공식 (Text)
+  synergyTags  Json     @map("synergy_tags") // 이니시, 포킹, 보호 점수 등 JSON
+
+  // Relations
+  skills           Skill[]
+  matchupAttacker  MatchupInsight[] @relation("AttackerRelation")
+  matchupTarget    MatchupInsight[] @relation("TargetRelation")
+  situationalBuilds SituationalBuild[]
+
+  @@map("Champions")
+}
+
+model Skill {
+  id            Int      @id @default(autoincrement())
+  championId    Int      @map("champion_id")
+  key           String   // Q, W, E, R, P
+  name          String
+  imageUrl      String?  @map("image_url")
+  cooldownAllLv String   @map("cooldown_all_lv") // 예: "6/5.5/4"
+  traitTip      String   @map("trait_tip")       // 메커니즘 특징 (Text)
+  counterAdvice String   @map("counter_advice")  // 상대법 (Text)
+
+  // Relations
+  champion Champion @relation(fields: [championId], references: [id])
+
+  @@map("Skills")
+}
+
+enum RelationType {
+  Strong
+  Weak
+  Even
+}
+
+model MatchupInsight {
+  id             Int          @id @default(autoincrement())
+  attackerId     Int          @map("attacker_id")
+  targetId       Int          @map("target_id")
+  verdictMessage String       @map("verdict_message") // 상단 요약
+  tradingRule    String       @map("trading_rule")    // 라인전 딜교 원칙 (Text)
+  killWindow     String       @map("kill_window")     // 킬각 타이밍 정보 (Text)
+  survivalTip    String       @map("survival_tip")    // 생존 수칙 (Text)
+  relationType   RelationType @map("relation_type")
+
+  // Relations
+  attacker Champion @relation("AttackerRelation", fields: [attackerId], references: [id])
+  target   Champion @relation("TargetRelation", fields: [targetId], references: [id])
+
+  @@map("Matchup_Insights")
+}
+
+model SituationalBuild {
+  id           Int      @id @default(autoincrement())
+  championId   Int      @map("champion_id")
+  type         String   // RUNE, ITEM
+  optionName   String   @map("option_name")
+  conditionTag String   @map("condition_tag") // 추천 상황 (예: VS_BURST)
+  reason       String   // 왜 이 상황에 이 빌드가 필요한지 설명 (Text)
+
+  // Relations
+  champion Champion @relation(fields: [championId], references: [id])
+
+  @@map("Situational_Builds")
+}

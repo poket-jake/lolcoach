@@ -381,34 +381,38 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="glass-card" style="flex: 1;">
                     <h4 class="card-title mb-2" style="font-size: 0.9rem;"><span class="icon">💎</span> 추천 룬 빌드</h4>
                     <div class="rune-options-container">
-                        <div class="rune-option-box" style="padding: 0.6rem;">
-                            <div class="rune-option-header" style="margin-bottom: 0.4rem;">
-                                <span class="rune-option-tag">#1 메인 추천</span>
-                                <span class="text-gold" style="font-size: 0.7rem;">승률 54.2%</span>
+                        <div class="rune-option-box" style="padding: 0.8rem; background: rgba(255,255,255,0.03); border-radius: 8px; margin-bottom: 0.8rem;">
+                            <div class="rune-option-header" style="margin-bottom: 0.6rem; display: flex; justify-content: space-between;">
+                                <span class="rune-option-tag" style="color: var(--gold); font-weight: bold;">[메인] 지배 + 영감</span>
+                                <span class="text-gold" style="font-size: 0.75rem;">승률 54.2%</span>
                             </div>
-                            <div class="rune-icons-row" style="gap: 0.8rem;">
-                                <div class="rune-group">
-                                    <div class="rune-icon-main" style="width:28px; height:28px; background:#000 url('https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/7200_Domination.png') center/cover;"></div>
-                                    <span style="font-size:0.75rem;">지배/감전</span>
+                            <div class="rune-icons-row" style="display: flex; gap: 1rem; align-items: center;">
+                                <div class="rune-group" style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/7200_Domination.png" style="width:32px; height:32px; border: 1px solid var(--gold); border-radius: 50%;">
+                                    <span style="font-size:0.8rem;">감전</span>
                                 </div>
-                                <div class="rune-group">
-                                    <div class="rune-icon-sub" style="width:20px; height:20px; background:#000 url('https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/7203_Whimsy.png') center/cover;"></div>
-                                    <span style="font-size:0.75rem; color:var(--text-muted);">영감/비스킷</span>
+                                <div class="rune-group" style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/7203_Whimsy.png" style="width:24px; height:24px; border: 1px solid rgba(255,255,255,0.2); border-radius: 50%;">
+                                    <span style="font-size:0.8rem; color:var(--text-muted);">비스킷</span>
                                 </div>
                             </div>
-                            <div class="rune-reason-box" style="margin-top: 0.4rem; font-size: 0.7rem;">
-                                💡 초반 압박 및 폭발적인 데미지 기여
+                            <div class="rune-reason-box" style="margin-top: 0.6rem; padding: 0.5rem; background: rgba(61, 139, 255, 0.1); border-radius: 4px; font-size: 0.75rem;">
+                                💡 초반 딜교환 압박 및 후반 폭발력 최적화
                             </div>
                         </div>
 
-                        <div class="rune-option-box" style="padding: 0.6rem; opacity: 0.8;">
-                            <div class="rune-option-header" style="margin-bottom: 0.4rem;">
-                                <span class="rune-option-tag" style="color: var(--blue);">#2 서브 추천</span>
+                        <div class="rune-option-box" style="padding: 0.8rem; background: rgba(255,255,255,0.01); border-radius: 8px; border: 1px dashed rgba(255,255,255,0.1);">
+                            <div class="rune-option-header" style="margin-bottom: 0.6rem;">
+                                <span class="rune-option-tag" style="color: var(--blue);">[서브] 마법 + 정밀</span>
                             </div>
-                            <div class="rune-icons-row" style="gap: 0.8rem;">
-                                <div class="rune-group">
-                                    <div class="rune-icon-main" style="width:28px; height:28px; border-color:var(--blue); background:url('https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/7202_Sorcery.png') center/cover;"></div>
-                                    <span style="font-size:0.75rem;">마법/선제공격</span>
+                            <div class="rune-icons-row" style="display: flex; gap: 1rem; align-items: center;">
+                                <div class="rune-group" style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/7202_Sorcery.png" style="width:32px; height:32px; border: 1px solid var(--blue); border-radius: 50%;">
+                                    <span style="font-size:0.8rem;">유성</span>
+                                </div>
+                                <div class="rune-group" style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/7201_Precision.png" style="width:24px; height:24px; border: 1px solid rgba(255,255,255,0.2); border-radius: 50%;">
+                                    <span style="font-size:0.8rem; color:var(--text-muted);">민첩함</span>
                                 </div>
                             </div>
                         </div>
@@ -424,7 +428,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="item-category">
                         <span class="category-label">시작 아이템</span>
                         <div class="item-node" title="도란의 반지">
-                            <div class="item-icon-circle"><img src="https://ddragon.leagueoflegends.com/cdn/14.3.1/img/item/1056.png" style="width:28px;"></div>
+                            <div class="item-icon-circle"><img src="https://ddragon.leagueoflegends.com/cdn/14.3.1/img/item/1056.png" alt="Doran's Ring"></div>
                             <div class="item-tooltip">라인 유지력과 마나 수급을 위한 필수 시작템</div>
                         </div>
                     </div>
@@ -433,7 +437,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="item-category">
                         <span class="category-label">1코어 핵심</span>
                         <div class="item-node" title="루덴의 동반자">
-                            <div class="item-icon-circle" style="border-color: var(--gold);"><img src="https://ddragon.leagueoflegends.com/cdn/14.3.1/img/item/3001.png" style="width:28px;"></div>
+                            <div class="item-icon-circle" style="border-color: var(--gold);"><img src="https://ddragon.leagueoflegends.com/cdn/14.3.1/img/item/3001.png" alt="Luden's Companion"></div>
                             <div class="item-tooltip">강력한 스킬 데미지와 쿨감 확보 (최우선)</div>
                         </div>
                     </div>
@@ -442,7 +446,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="item-category">
                         <span class="category-label">2코어 선택</span>
                         <div class="item-node" title="폭풍쇄도">
-                            <div class="item-icon-circle" style="border-color: var(--red);"><img src="https://ddragon.leagueoflegends.com/cdn/14.3.1/img/item/3135.png" style="width:28px;"></div>
+                            <div class="item-icon-circle" style="border-color: var(--red);"><img src="https://ddragon.leagueoflegends.com/cdn/14.3.1/img/item/3135.png" alt="Stormsurge"></div>
                             <div class="item-tooltip">사이드 암살 및 순간 딜러 시너지 극대화</div>
                         </div>
                     </div>
@@ -450,17 +454,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     <!-- 상황별 추천 -->
                     <div class="item-category">
                         <span class="category-label">상황별 아이템</span>
-                        <div style="display: flex; gap: 0.6rem;">
+                        <div style="display: flex; gap: 1rem;">
                             <div class="item-node" title="공허의 지팡이">
-                                <div class="item-icon-circle"><img src="https://ddragon.leagueoflegends.com/cdn/14.3.1/img/item/3135.png" style="width:28px;"></div>
+                                <div class="item-icon-circle"><img src="https://ddragon.leagueoflegends.com/cdn/14.3.1/img/item/3135.png" alt="Void Staff"></div>
                                 <div class="item-tooltip"><strong>상대 탱커가 많을 때:</strong> 마법 관통력 확보</div>
                             </div>
                             <div class="item-node" title="망각의 구">
-                                <div class="item-icon-circle"><img src="https://ddragon.leagueoflegends.com/cdn/14.3.1/img/item/3916.png" style="width:28px;"></div>
+                                <div class="item-icon-circle"><img src="https://ddragon.leagueoflegends.com/cdn/14.3.1/img/item/3916.png" alt="Oblivion Orb"></div>
                                 <div class="item-tooltip"><strong>치유 감소가 필요할 때:</strong> 회복기 위주 챔피언 상대</div>
                             </div>
                             <div class="item-node" title="존야의 모래시계">
-                                <div class="item-icon-circle"><img src="https://ddragon.leagueoflegends.com/cdn/14.3.1/img/item/3157.png" style="width:28px;"></div>
+                                <div class="item-icon-circle"><img src="https://ddragon.leagueoflegends.com/cdn/14.3.1/img/item/3157.png" alt="Zhonya's Hourglass"></div>
                                 <div class="item-tooltip"><strong>생존이 급할 때:</strong> 암살자 진입 방어</div>
                             </div>
                         </div>
